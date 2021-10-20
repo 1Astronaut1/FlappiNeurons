@@ -138,7 +138,9 @@ function setTime()
       }
    }
 }
-function draw() { 
+function draw() {
+   if(game)
+   {
    setTime();
    ctx.drawImage(bg, 0, 0);
    for(var i = 0; i < pipe.length; i++) {
@@ -218,5 +220,6 @@ for (let o = 0; o < birdList.length; o++) {
  ctx.fillText("Счет: " + score, 10, cvs.height - 20);
 
  requestAnimationFrame(draw);
+}
 }
 pipeBottom.onload = draw;
