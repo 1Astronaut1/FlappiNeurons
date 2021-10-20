@@ -75,10 +75,8 @@ if(localStorage.AI.length > 0)
 {
    for (let i = 0; i < 10; i++) {
       AIlist[i] = randomizeAI(JSON.parse(localStorage.AI));
-      console.log(AIlist[i][0][0][0]);
    } 
    AIlist[0] = JSON.parse(localStorage.AI);
-   console.log(AIlist[0][0][0][0]);
 }
 
 document.querySelector("#clear").addEventListener('click', clear);
@@ -102,16 +100,6 @@ fly.src = "audio/fly.mp3";
 score_audio.src = "audio/score.mp3";
 
 var gap = 100;
-
-// При нажатии на какую-либо кнопку
-document.addEventListener("keydown", moveUp);
-
-function moveUp() {
-   for (let i = 0; i < birdList.length; i++) {
-      birdList[i].ySpeed = -4;
-      fly.play();
-   }
-}
 
 // Создание блоков
 var pipe = [];
