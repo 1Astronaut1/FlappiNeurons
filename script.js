@@ -71,12 +71,15 @@ AIlist = [];
 for (let i = 0; i < 20; i++) {
    AIlist.push(makeAI([3,4,4,1], -10, 10));
 }
-if(localStorage.AI.length > 0)
+if (localStorage.AI)
 {
-   for (let i = 0; i < 10; i++) {
-      AIlist[i] = randomizeAI(JSON.parse(localStorage.AI));
-   } 
-   AIlist[0] = JSON.parse(localStorage.AI);
+   if(localStorage.AI.length > 0)
+   {
+      for (let i = 0; i < 10; i++) {
+         AIlist[i] = randomizeAI(JSON.parse(localStorage.AI));
+      } 
+      AIlist[0] = JSON.parse(localStorage.AI);
+   }
 }
 
 document.querySelector("#clear").addEventListener('click', clear);
